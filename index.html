@@ -17,7 +17,7 @@
 
 <nav class="navbar sticky-top navbar-expand-lg navbar-dark bg-dark">
     <div class="container">
-        <a href="#" class="navbar-brand mb-0 h1" style="align-content: center">
+        <a href="#" class="navbar-brand mb-0 h1 ">
             <img src="images/logo.svg" class="d-inline-block align-middle" width="64" height="64">
         </a>
         <button class="navbar-toggler"
@@ -113,8 +113,71 @@
     </div>
 </nav>
 
+<div class="container" id="pizzas">
 
-<div style="height: 1000px">
+</div>
+
+<script>
+    let pizzasArray = [
+        {
+            id: 1,
+            name: "Affumicata",
+            price: 95,
+            image: "9c36508a696673f98fea8634a908d3ad.jpg",
+        },
+        {
+            id: 2,
+            name: "Cheese&Spinach",
+            price: 95,
+            image: "15cda0097dd4bd4227af9247a663f935.jpg",
+        },
+        {
+            id: 3,
+            name: "5 Cheese",
+            price: 90,
+            image: "d427104f35bfee2b727079d5e414df43.jpg",
+        },
+        // {
+        //     id: 4,
+        //     name: "Barbeque",
+        //     price: 90,
+        //     image: "38c60145ae43db28fe54f871e88d72ca.jpg",
+        // },
+    ];
+    let products = "";
+
+    function array4Col(arr) {
+        if (arr.length % 4 !== 0) {
+            let obj = {
+                id: "",
+                name: "",
+                price: "",
+                image: "",
+            };
+            arr.push(obj);
+            if (arr.length % 4 !== 0) array4Col(arr);
+        }
+    }
+
+    array4Col(pizzasArray);
+    pizzasArray.forEach((pizza, index) => {
+        if (index % 4 === 0) {
+            products += `<div class="row">`;
+        }
+        products += `<div class="col">
+                        ${pizza.name}
+                        ${pizza.price}
+                        <img src="images/pizzas/${pizza.image}" alt="${pizza.image}">
+                     </div>`;
+        if (index % 4 === 3) {
+            products += `</div>`
+        }
+    })
+    document.getElementById('pizzas').innerHTML = products;
+</script>
+
+
+<!--<div style="height: 1000px">
     svkkfvkv'<br>
     bbm;kdbz<br>
     zbknkb<br>
@@ -330,7 +393,7 @@
     bbm;kdbz<br>
     zbknkb<br>
     zbknzkbndz<br>
-    bnzlbjfzdbln<br>
+    bnzlbjfzdbln<br>-->
 </div>
 </body>
 </html>
