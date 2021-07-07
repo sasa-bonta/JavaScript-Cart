@@ -1,0 +1,70 @@
+.card {
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+    max-width: 300px;
+    margin: auto;
+    text-align: left;
+    border-radius: 10px;
+    font-family: arial, "Futura New Book", sans-serif;
+    background: #1b1a1b;
+    color: white;
+    padding: 10px;
+}
+
+.card:hover {
+    border: 1px #c0a304 solid;
+    -webkit-transition: 500ms;
+}
+
+.order {
+    white-space: pre;
+}
+
+.card button {
+    outline: 0;
+    padding: 12px;
+    color: white;
+    background-color: #1b1a1b;
+    text-align: center;
+    cursor: pointer;
+    width: 100%;
+    font-size: 18px;
+    border-radius: 10px;
+    border: 1px #c0a304 solid;
+    margin-top: 1vh;
+}
+
+.card button:hover {
+    color: black;
+    background: #c0a304;
+    border-radius: 10px;
+}
+
+.row {
+    margin-top: 10vh;
+}
+
+.product-image {
+    margin-bottom: 2vh;
+    border-radius: 10px;
+}
+
+body {
+    background-color: #1b1a1b;
+}
+
+#cart-button:hover {
+    border: 1px white solid;
+}
+
+#menu-container {
+    margin-left: 25vw;
+}
+
+.bi-cart-check {
+    font-size: 32px;
+    color: white;
+}
+
+.nav-link {
+    margin-top: 10px;
+}

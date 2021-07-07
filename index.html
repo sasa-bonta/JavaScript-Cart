@@ -11,14 +11,15 @@
             integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
             crossorigin="anonymous"></script>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css">
+    <link rel="stylesheet" href="resources/css/index.css">
 </head>
 <body>
 
 
 <nav class="navbar sticky-top navbar-expand-lg navbar-dark bg-dark">
-    <div class="container">
+    <div class="container bi-align-middle" id="menu-container">
         <a href="#" class="navbar-brand mb-0 h1 ">
-            <img src="images/logo.svg" class="d-inline-block align-middle" width="64" height="64">
+            <img src="images/logo.svg" class="d-inline-block align-middle" width="64" height="64" alt="logo.svg">
         </a>
         <button class="navbar-toggler"
                 type="button"
@@ -104,8 +105,8 @@
                     </ul>
                 </li>
                 <li>
-                    <button class="btn btn-success ms-lg-5">
-                        <i class="bi-cart-check" style="font-size: 16px;"></i>
+                    <button class="btn btn-dark ms-5" id="cart-button">
+                        <i class="bi-cart-check"></i>
                     </button>
                 </li>
             </ul>
@@ -113,71 +114,11 @@
     </div>
 </nav>
 
-<div class="container" id="pizzas">
+<div class="container" id="pizzas"></div>
 
-</div>
+<script src="resources/js/products.js"></script>
 
-<script>
-    let pizzasArray = [
-        {
-            id: 1,
-            name: "Affumicata",
-            price: 95,
-            image: "9c36508a696673f98fea8634a908d3ad.jpg",
-        },
-        {
-            id: 2,
-            name: "Cheese&Spinach",
-            price: 95,
-            image: "15cda0097dd4bd4227af9247a663f935.jpg",
-        },
-        {
-            id: 3,
-            name: "5 Cheese",
-            price: 90,
-            image: "d427104f35bfee2b727079d5e414df43.jpg",
-        },
-        // {
-        //     id: 4,
-        //     name: "Barbeque",
-        //     price: 90,
-        //     image: "38c60145ae43db28fe54f871e88d72ca.jpg",
-        // },
-    ];
-    let products = "";
-
-    function array4Col(arr) {
-        if (arr.length % 4 !== 0) {
-            let obj = {
-                id: "",
-                name: "",
-                price: "",
-                image: "",
-            };
-            arr.push(obj);
-            if (arr.length % 4 !== 0) array4Col(arr);
-        }
-    }
-
-    array4Col(pizzasArray);
-    pizzasArray.forEach((pizza, index) => {
-        if (index % 4 === 0) {
-            products += `<div class="row">`;
-        }
-        products += `<div class="col">
-                        ${pizza.name}
-                        ${pizza.price}
-                        <img src="images/pizzas/${pizza.image}" alt="${pizza.image}">
-                     </div>`;
-        if (index % 4 === 3) {
-            products += `</div>`
-        }
-    })
-    document.getElementById('pizzas').innerHTML = products;
-</script>
-
-
-<!--<div style="height: 1000px">
+<div style="height: 1000px; color: white">
     svkkfvkv'<br>
     bbm;kdbz<br>
     zbknkb<br>
@@ -311,89 +252,6 @@
     zbn<br>
     zblzbn<br>
     lzbnzl<br>
-    bnz<br>
-    lbnz<br>
-    lbnzldbnlzbnz<br>
-    bn<br>
-    zb<br>
-    z<br>
-    nbz<br>
-    lnbzljnbzl<br>
-    bn<br>
-    zbn<br>
-    zb<br>
-    lzbn<br>
-    zlbn<br>
-    zbn<br>
-    zbn<br>
-    lzbnz<br>
-    lbnz<br>
-    lnbz<br>
-    lnb<br>
-    zbnz<br>
-    lbnz<br>
-    lbnz<br>
-    lbnz<br>
-    lnbzldnb<br>
-    svkkfvkv'<br>
-    bbm;kdbz<br>
-    zbknkb<br>
-    zbknzkbndz<br>
-    bnzlbjfzdbln<br>
-    svkkfvkv'<br>
-    bbm;kdbz<br>
-    zbknkb<br>
-    zbknzkbndz<br>
-    bnzlbjfzdbln<br>
-    zbn<br>
-    lzbjn<br>
-    bnzb<br>
-    lnzb<br>
-    lzbnzl<br>
-    bnz<br>
-    lbz<br>
-    dnlbnz<br>
-    lbnzlblz<br>
-    bnzbnzl<br>
-    jbn<br>
-    zlnbz<br>
-    bnz<br>
-    lbnzlbnljzbnzldjbnzlg<br>
-    bnzg<br>
-    znb<br>
-    zbn<br>
-    zbn<br>
-    zblzbn<br>
-    lzbnzl<br>
-    bnz<br>
-    lbnz<br>
-    lbnzldbnlzbnz<br>
-    bn<br>
-    zb<br>
-    z<br>
-    nbz<br>
-    lnbzljnbzl<br>
-    bn<br>
-    zbn<br>
-    zb<br>
-    lzbn<br>
-    zlbn<br>
-    zbn<br>
-    zbn<br>
-    lzbnz<br>
-    lbnz<br>
-    lnbz<br>
-    lnb<br>
-    zbnz<br>
-    lbnz<br>
-    lbnz<br>
-    lbnz<br>
-    lnbzldnb<br>
-    svkkfvkv'<br>
-    bbm;kdbz<br>
-    zbknkb<br>
-    zbknzkbndz<br>
-    bnzlbjfzdbln<br>-->
 </div>
 </body>
 </html>
