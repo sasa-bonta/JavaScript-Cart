@@ -105,7 +105,8 @@
                     </ul>
                 </li>
                 <li>
-                    <button class="btn btn-dark ms-5" id="cart-button">
+                    <button class="btn btn-dark ms-5" id="cart-button" data-bs-target="#cartModal"
+                            data-bs-toggle="modal">
                         <i class="bi-cart-check"></i>
                     </button>
                 </li>
@@ -117,6 +118,71 @@
 <div class="container" id="pizzas"></div>
 
 <script src="resources/js/products.js"></script>
+
+
+<div class="modal fade" id="cartModal" aria-hidden="true" aria-labelledby="exampleModalToggleLabel"
+     tabindex="-1">
+    <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable modal-lg">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalToggleLabel">Your cart</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                Show a second modal and hide this one with the button below. <br>
+                Show a second modal and hide this one with the button below. <br>
+                Show a second modal and hide this one with the button below. <br>
+                Show a second modal and hide this one with the button below. <br>
+                Show a second modal and hide this one with the button below. <br>
+                Show a second modal and hide this one with the button below. <br>
+                Show a second modal and hide this one with the button below. <br>
+                Show a second modal and hide this one with the button below. <br>
+                Show a second modal and hide this one with the button below. <br>
+                Show a second modal and hide this one with the button below. <br>
+                Show a second modal and hide this one with the button below. <br>
+                Show a second modal and hide this one with the button below. <br>
+                Show a second modal and hide this one with the button below. <br>
+                Show a second modal and hide this one with the button below. <br>
+                Show a second modal and hide this one with the button below. <br>
+                Show a second modal and hide this one with the button below. <br>
+                Show a second modal and hide this one with the button below. <br>
+
+                <div class="container-fluid">
+                    <div class="row">
+                        <div class="col-md-4">.col-md-4</div>
+                        <div class="col-md-4 ms-auto">.col-md-4 .ms-auto</div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-3 ms-auto">.col-md-3 .ms-auto</div>
+                        <div class="col-md-2 ms-auto">.col-md-2 .ms-auto</div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-6 ms-auto">.col-md-6 .ms-auto</div>
+                    </div>
+                    <div class="row">
+                        <div class="col-sm-9">
+                            Level 1: .col-sm-9
+                            <div class="row">
+                                <div class="col-8 col-sm-6">
+                                    Level 2: .col-8 .col-sm-6
+                                </div>
+                                <div class="col-4 col-sm-6">
+                                    Level 2: .col-4 .col-sm-6
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button class="btn btn-primary" data-bs-target="#exampleModalToggle2" data-bs-toggle="modal"
+                        data-bs-dismiss="modal">Order
+                </button>
+            </div>
+        </div>
+    </div>
+</div>
+
 
 <div style="height: 1000px; color: white">
     svkkfvkv'<br>
@@ -253,5 +319,7 @@
     zblzbn<br>
     lzbnzl<br>
 </div>
+
+
 </body>
 </html>

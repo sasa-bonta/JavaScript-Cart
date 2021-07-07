@@ -78,7 +78,7 @@ pizzasArray.forEach((pizza, index) => {
     //         <div class="card">
     //             <img src="images/pizzas/${pizza.image}" alt="${pizza.image}">
     //              <h4>${pizza.name}</h4>
-    //              <button class="order">${pizza.price} MDL                 order <i class="bi-cart-plus"></i></button>
+    //              <button class="order" onclick="addToCart(${index});">${pizza.price} MDL                 order <i class="bi-cart-plus"></i></button>
     //         </div>
     //     </div>`;
     // } else {
