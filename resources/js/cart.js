@@ -1,4 +1,4 @@
-localStorage.cart = JSON.stringify([]);
+// localStorage.cart = JSON.stringify([]);
 let cartProducts = JSON.parse(localStorage.cart);
 let s3 = "&nbsp;&nbsp;&nbsp;";
 let s6 = s3 + s3;
@@ -29,13 +29,13 @@ function displayCart() {
         total += price;
         itemsToDisplay += `<img src="images/pizzas/${item.image}" class="cart-image" alt="item.name"> 
                            <div class="product-cart">${item.name}: ${s3} ${item.quantity} pcs. ${s6} ${price} MDL 
-                           <button class="btn btn-danger delete-btn"><i class="bi-trash"></i></button>
+                           <button class="btn btn-danger delete-btn" onclick="deleteItem(${item.id})"><i class="bi-trash"></i></button>
                            </div> <br>`
     })
     itemsToDisplay += `<div class="total">Total:${s3} ${total} MDL</div><br>`;
     document.getElementById('cart-modal').innerHTML = itemsToDisplay;
 }
 
-function deleteItem() {
-
+function deleteItem(id) {
+    console.log("delete:" + id);
 }
