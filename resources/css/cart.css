@@ -1,0 +1,25 @@
+.product-cart {
+    font-family: "Futura New Book",sans-serif;
+    font-weight: 700;
+    font-size: 1.5rem;
+    margin-top: 5px;
+}
+
+.cart-image {
+    border-radius: 10px;
+    object-fit: cover;
+    height: 256px;
+    width: 256px;
+}
+
+.delete-btn {
+    float: right;
+    margin-right: 20px;
+}
+
+.total {
+    font-family: "Futura New Book",sans-serif;
+    font-weight: 900;
+    font-size: 2rem;
+    color: darkred;
+}

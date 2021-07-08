@@ -15,10 +15,6 @@
     -webkit-transition: 500ms;
 }
 
-.order {
-    white-space: pre;
-}
-
 .card button {
     outline: 0;
     padding: 12px;
