@@ -24,18 +24,27 @@ function addToCart(id) {
 function displayCart() {
     let itemsToDisplay = "";
     let total = 0;
-    cartProducts.forEach((item, index) => {
-        let price = item.price * item.quantity;
-        total += price;
-        itemsToDisplay += `<img src="images/pizzas/${item.image}" class="cart-image" alt="item.name"> 
+
+    if (!isEmpty(cartProducts)) {
+        cartProducts.forEach((item, index) => {
+            let price = item.price * item.quantity;
+            total += price;
+            itemsToDisplay += `<img src="images/pizzas/${item.image}" class="cart-image" alt="item.name"> 
                            <div class="product-cart">${item.name}: ${s3} ${item.quantity} pcs. ${s6} ${price} MDL 
                            <button class="btn btn-danger delete-btn" onclick="deleteItem(${item.id})"><i class="bi-trash"></i></button>
                            </div> <br>`
-    })
-    itemsToDisplay += `<div class="total">Total:${s3} ${total} MDL</div><br>`;
+        })
+        itemsToDisplay += `<div class="total">Total:${s3} ${total} MDL</div><br>`;
+    } else {
+        itemsToDisplay += `<div class="cart-empty"> Your cart is empty!</div><br>`;
+    }
     document.getElementById('cart-modal').innerHTML = itemsToDisplay;
 }
 
 function deleteItem(id) {
-    console.log("delete:" + id);
+    let index = cartProducts.findIndex(item => item.id === id);
+    cartProducts.splice(index, 1);
+    localStorage.cart = JSON.stringify(cartProducts);
+    displayCart()
+    console.log("deleted:" + id);
 }
