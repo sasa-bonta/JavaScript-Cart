@@ -1,4 +1,4 @@
-let s15 = "               ";
+let s12 = s6 + s6;
 
 let pizzasArray = [
     {
@@ -78,7 +78,7 @@ pizzasArray.forEach((pizza, index) => {
             <div class="card">
                 <img src="images/pizzas/${pizza.image}" class="product-image" alt="${pizza.image}">
                  <h4>${pizza.name}</h4>
-                 <button onclick="addToCart(${pizza.id});">${pizza.price} MDL ${s15} order <i class="bi-cart-plus"></i></button>
+                 <button onclick="addToCart(${pizza.id});">${pizza.price} MDL ${s12} order <i class="bi-cart-plus"></i></button>
             </div>
         </div>` : `<div class="col"></div>`;
 
