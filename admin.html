@@ -45,22 +45,22 @@
 
 <div class="container">
     <div class="crud-form">
-        <form action="">
+        <form id="productForm" name="productForm">
             <div>
                 <label for="name">Name</label>
-                <input type="text" id="name">
+                <input type="text" id="name" name="name">
             </div>
             <div>
                 <label for="price">Price</label>
-                <input type="text" id="price">
+                <input type="text" id="price" name="price">
             </div>
             <div>
                 <label for="description">Description</label>
-                <input type="text" id="description">
+                <input type="text" id="description" name="description">
             </div>
             <div>
                 <label for="image">Image</label>
-                <input type="text" id="image">
+                <input type="file" id="image" name="image" accept="image/*">
             </div>
             <div>
                 <button id="save-product" class="btn btn-success" type="submit">Save</button>
@@ -70,21 +70,43 @@
 </div>
 
 <script>
+    localStorage.crud = localStorage.crud !== undefined ? localStorage.crud : localStorage.crud = JSON.stringify([])
+    let productsList = JSON.parse(localStorage.crud);
+
+    console.log(productsList);
+
+    class Product {
+        constructor() {
+            this.name = this.valOf('name');
+            this.price = this.valOf('price');
+            this.description = this.valOf('description');
+            this.image = this.valOf('image') !== "" ? this.valOf('image') : "no-image.png";
+
+            if (this.valOf('image') === "") {
+                this.image = "no-image.png";
+            } else {
+                this.image = this.valOf('image');
+                this.saveImage();
+            }
+        }
+
+        valOf(data) {
+            return document.getElementById(data).value;
+        }
+
+        save() {
+            productsList.push(this);
+            localStorage.crud = JSON.stringify(productsList);
+        }
+
+        saveImage() {
+            this.image.move
+        }
+    }
+
     document.querySelector('form').addEventListener('submit', (e) => {
-        let product = {
-            name: document.getElementById('name').value,
-            price: document.getElementById('price').value,
-            description: document.getElementById('description').value,
-            image: document.getElementById('image').value,
-        };
-
-        document.getElementById('name').value = "";
-        document.getElementById('price').value = "";
-        document.getElementById('description').value = "";
-        document.getElementById('image').value = "";
-
-        console.log(product);
-        e.preventDefault();
+        let product = new Product();
+        product.save();
     });
 </script>
 
