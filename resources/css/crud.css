@@ -1,0 +1,29 @@
+.crud-form {
+    width: 50%;
+    padding: 30px;
+    color: white;
+    transition: .6s;
+    margin: auto;
+}
+
+input, select, option {
+    padding: 5px;
+    margin: 0 10px 6px 10px;
+    font-family: arial, "Futura New Book", sans-serif;
+    font-size: 14pt;
+    border-radius: 10px;
+    width: 600px;
+    height: 45px;
+}
+
+label {
+    font-family: arial, "Futura New Book", sans-serif;
+    font-weight: 700;
+    font-size: 1.5rem;
+}
+
+#save-product {
+    margin-top: 30px;
+    margin-left: 265px;
+    font-size: 1.25rem;
+}
