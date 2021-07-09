@@ -82,23 +82,10 @@ pizzasArray.forEach((pizza, index) => {
             </div>
         </div>` : `<div class="col"></div>`;
 
-    // ### Explicit if else
-    // if (!isEmpty(pizza)) {
-    //     products +=
-    //     `<div class="col">
-    //         <div class="card">
-    //             <img src="images/pizzas/${pizza.image}" alt="${pizza.image}">
-    //              <h4>${pizza.name}</h4>
-    //              <button class="order" onclick="addToCart(${index});">${pizza.price} MDL                 order <i class="bi-cart-plus"></i></button>
-    //         </div>
-    //     </div>`;
-    // } else {
-    //     products +=`<div class="col"></div>`;
-    // }
-
     if (index % 4 === 3) {
         products += `</div>`
     }
 })
 
 document.getElementById('pizzas').innerHTML = products;
+document.getElementById('items-count').innerHTML = countItems();

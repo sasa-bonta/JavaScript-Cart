@@ -3,6 +3,14 @@ let cartProducts = JSON.parse(localStorage.cart);
 let s3 = "&nbsp;&nbsp;&nbsp;";
 let s6 = s3 + s3;
 
+function countItems() {
+    let itemsCount = 0;
+    cartProducts.forEach(prod => {
+        itemsCount += prod.quantity;
+    })
+    return itemsCount;
+}
+
 function addItemToCart(id) {
     let cartItem = cartProducts.find(item => item.id === id)
     if (cartItem === undefined) {
@@ -17,6 +25,8 @@ function addItemToCart(id) {
 
 function addToCart(id) {
     addItemToCart(id);
+    document.getElementById('items-count').innerHTML = countItems();
+
     localStorage.cart = JSON.stringify(cartProducts);
     console.log(cartProducts);
 }
@@ -26,7 +36,7 @@ function displayCart() {
     let total = 0;
 
     if (!isEmpty(cartProducts)) {
-        cartProducts.forEach((item, index) => {
+        cartProducts.forEach(item => {
             let price = item.price * item.quantity;
             total += price;
             itemsToDisplay += `<img src="images/pizzas/${item.image}" class="cart-image" alt="item.name"> 
@@ -45,6 +55,6 @@ function deleteItem(id) {
     let index = cartProducts.findIndex(item => item.id === id);
     cartProducts.splice(index, 1);
     localStorage.cart = JSON.stringify(cartProducts);
+    document.getElementById('items-count').innerHTML = countItems();
     displayCart()
-    console.log("deleted:" + id);
 }
