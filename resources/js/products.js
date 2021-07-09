@@ -72,7 +72,6 @@ pizzasArray.forEach((pizza, index) => {
         products += `<div class="row">`;
     }
 
-    // ### Implicit if else
     products += !isEmpty(pizza) ?
         `<div class="col">
             <div class="card">

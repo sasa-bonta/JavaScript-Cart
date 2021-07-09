@@ -1,4 +1,4 @@
-// localStorage.cart = JSON.stringify([]);
+localStorage.cart = localStorage.cart !== undefined ? localStorage.cart : localStorage.cart = JSON.stringify([])
 let cartProducts = JSON.parse(localStorage.cart);
 let s3 = "&nbsp;&nbsp;&nbsp;";
 let s6 = s3 + s3;
