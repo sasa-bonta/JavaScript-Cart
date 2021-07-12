@@ -84,9 +84,9 @@ pizzasArray.forEach((pizza, index) => {
         `<div class="col col-6 col-lg-3">
             <div class="card text-white h-100">
                 <img src="images/pizzas/${pizza.image}" class="product-image" alt="${pizza.image}">
-                <h4>${pizza.name}</h4>h-100
+                <h4>${pizza.name}</h4>
                     <button onclick="addToCart(${pizza.id});">
-                        <div class="price">
+                        <div class="to-sides">
                             <div>${pizza.price} MDL</div> 
                             <div>order <i class="bi-cart-plus"></i></div>
                         </div>

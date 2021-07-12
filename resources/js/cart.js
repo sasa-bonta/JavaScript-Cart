@@ -40,13 +40,16 @@ function displayCart() {
             let price = item.price * item.quantity;
             total += price;
             itemsToDisplay += `<img src="images/pizzas/${item.image}" class="cart-image" alt="item.name"> 
-                           <div class="product-cart">${item.name}: ${s3} ${item.quantity} pcs. ${s6} ${price} MDL 
-                           <button class="btn btn-danger delete-btn" onclick="deleteItem(${item.id})"><i class="bi-trash"></i></button>
-                           </div> <br>`
+                               <div class="product-cart">
+                                   ${item.name}: ${s3} ${item.quantity} pcs. ${s6} ${price} MDL 
+                                   <button class="btn btn-danger delete-btn" onclick="deleteItem(${item.id})">
+                                       <i class="bi-trash"></i>
+                                   </button>
+                               </div><br>`
         })
-        itemsToDisplay += `<div class="total">Total:${s3} ${total} MDL</div><br>`;
     } else {
         itemsToDisplay += `<div class="cart-empty"> Your cart is empty!</div><br>`;
+        document.getElementById('modal-footer').innerHTML = `<button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>`;
     }
     document.getElementById('cart-modal').innerHTML = itemsToDisplay;
 }
