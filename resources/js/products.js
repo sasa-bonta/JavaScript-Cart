@@ -81,7 +81,7 @@ pizzasArray.forEach((pizza, index) => {
     }
 
     products += !isEmpty(pizza) ?
-        `<div class="col col-6 col-sm-6 col-xl-3">
+        `<div class="col col-6 col-md-3">
             <div class="card">
                 <img src="images/pizzas/${pizza.image}" class="product-image" alt="${pizza.image}">
                  <h4>${pizza.name}</h4>
