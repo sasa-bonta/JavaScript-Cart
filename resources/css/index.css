@@ -64,3 +64,8 @@ body {
 .nav-link {
     margin-top: 10px;
 }
+
+.price {
+    display: flex;
+    justify-content: space-around;
+}
