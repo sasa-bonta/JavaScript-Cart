@@ -81,11 +81,11 @@ pizzasArray.forEach((pizza, index) => {
     }
 
     products += !isEmpty(pizza) ?
-        `<div class="col col-xs-6 col-sm-6 col-lg-3">
+        `<div class="col col-6 col-sm-6 col-xl-3">
             <div class="card">
                 <img src="images/pizzas/${pizza.image}" class="product-image" alt="${pizza.image}">
                  <h4>${pizza.name}</h4>
-                 <button onclick="addToCart(${pizza.id});">${pizza.price} MDL ${s12} order <i class="bi-cart-plus"></i></button>
+                 <button onclick="addToCart(${pizza.id});"><div style="display: flex; justify-content: space-around;"><div>${pizza.price} MDL</div> <div>order <i class="bi-cart-plus"></i></div></div></button>
             </div>
         </div>` : `<div class="col"></div>`;
 
