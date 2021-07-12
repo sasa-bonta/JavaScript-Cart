@@ -21,11 +21,9 @@
     background-color: #1b1a1b;
     text-align: center;
     cursor: pointer;
-    width: 100%;
     font-size: 18px;
     border-radius: 10px;
     border: 1px #c0a304 solid;
-    margin-top: 1vh;
 }
 
 .card button:hover {
