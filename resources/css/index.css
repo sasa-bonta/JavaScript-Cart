@@ -7,11 +7,19 @@
     font-family: arial, "Futura New Book", sans-serif;
     background: #1b1a1b;
     padding: 10px;
+    justify-content: space-between;
+    flex-direction: column;
+    display: flex;
 }
 
 .card:hover {
     border: 1px #c0a304 solid;
     -webkit-transition: 500ms;
+}
+
+.card .btn-holder {
+    justify-content: flex-end;
+    display: flex;
 }
 
 .card button {
@@ -40,6 +48,10 @@
     margin-bottom: 2vh;
     border-radius: 10px;
 }
+
+/*.product-name {*/
+/*    font-size: 3vmax;*/
+/*}*/
 
 body {
     background-color: #1b1a1b;
