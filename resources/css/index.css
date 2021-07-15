@@ -29,7 +29,7 @@
     background-color: #1b1a1b;
     text-align: center;
     cursor: pointer;
-    font-size: 18px;
+    font-size: 1rem;
     border-radius: 10px;
     border: 1px #c0a304 solid;
 }
@@ -49,9 +49,9 @@
     border-radius: 10px;
 }
 
-/*.product-name {*/
-/*    font-size: 3vmax;*/
-/*}*/
+.product-name {
+    font-size: 1.25rem;
+}
 
 body {
     background-color: #1b1a1b;
