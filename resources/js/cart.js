@@ -39,7 +39,7 @@ function displayCart() {
         cartProducts.forEach(item => {
             let price = item.price * item.quantity;
             total += price;
-            itemsToDisplay += `<img src="images/pizzas/${item.image}" class="cart-image" alt="item.name"> 
+            itemsToDisplay += `<img src="${item.image}" class="cart-image" alt="item.name"> 
                                <div class="product-cart">
                                    ${item.name}: ${s3} ${item.quantity} pcs. ${s6} ${price} MDL 
                                    <button class="btn btn-danger delete-btn" onclick="deleteItem(${item.id})">
