@@ -45,3 +45,32 @@ input[type=file]::-webkit-file-upload-button:hover {
 input[type=file]::-webkit-file-upload-button:active {
     box-shadow: inset 0 0 0 20rem #0358b1;
 }
+
+#crudItems {
+    min-height: 300px;
+}
+
+.btn {
+    font-size: 22px;
+    margin: 5px;
+}
+
+tr:nth-child(odd) {
+    background: #1b1a1b
+}
+
+tr:nth-child(even) {
+    background: #363333
+}
+
+#crudItems th {
+    font-size: 22px;
+    padding-bottom: 20px;
+    padding-top: 50px;
+}
+
+#crudItems td {
+    font-size: 18px;
+}
+
+

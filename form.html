@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Admin pizzas</title>
+    <title>Product form</title>
     <link rel="shortcut icon" href="images/logo.svg" type="image/x-icon">
     <!--Meta required by bootstrap-->
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -47,23 +47,29 @@
 </nav>
 
 <div class="container">
-    <div class="row">
-        <div class="col1"></div>
-        <div class="col-10 text-light" id="crudItems"></div>
-        <div class="col1"></div>
-    </div>
+    <div class="crud-form">
+        <form id="productForm" name="productForm">
+            <div>
+                <input type="number" id="idInput" hidden>
 
-    <div class="row">
-        <div class="col1"></div>
-        <div class="col-10">
-            <a href="form.html">
-                <button class="btn btn-primary">Create new Product</button>
-            </a>
-        </div>
-        <div class="col1"></div>
+                <label for="name">Name</label>
+                <input type="text" id="name" name="name" required>
+
+                <label for="price">Price</label>
+                <input type="text" id="price" name="price" required>
+
+                <label for="description">Description</label>
+                <input type="text" id="description" name="description">
+
+                <label for="image">Image</label>
+                <input type="text" id="image" name="image" required>
+
+                <button id="save-product" class="btn btn-success" type="submit">Save</button>
+            </div>
+        </form>
     </div>
 </div>
 
-<script src="resources/js/admin.js"></script>
+<script src="resources/js/form.js"></script>
 </body>
 </html>

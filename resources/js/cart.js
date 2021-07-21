@@ -1,7 +1,6 @@
 localStorage.cart = localStorage.cart || JSON.stringify([])
 let cartProducts = JSON.parse(localStorage.cart);
 let s3 = "&nbsp;&nbsp;&nbsp;";
-let s6 = s3 + s3;
 
 function countItems() {
     let itemsCount = 0;
@@ -26,7 +25,6 @@ function addItemToCart(id) {
 function addToCart(id) {
     addItemToCart(id);
     document.getElementById('items-count').innerHTML = countItems();
-
     localStorage.cart = JSON.stringify(cartProducts);
 }
 
@@ -40,7 +38,7 @@ function displayCart() {
             total += price;
             itemsToDisplay += `<img src="${item.image}" class="cart-image" alt="item.name"> 
                                <div class="product-cart">
-                                   ${item.name}: ${s3} ${item.quantity} pcs. ${s6} ${price} MDL 
+                                   ${item.name}: ${s3} ${item.quantity} pcs. ${s3,s3} ${price} MDL 
                                    <button class="btn btn-danger delete-btn" onclick="deleteItem(${item.id})">
                                        <i class="bi-trash"></i>
                                    </button>

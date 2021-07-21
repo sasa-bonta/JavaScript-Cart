@@ -57,8 +57,6 @@ let pizzasArray = [
     },
 ];
 
-let products = "";
-
 function isEmpty(obj) {
     return Object.keys(obj).length === 0;
 }
@@ -77,6 +75,7 @@ function loadLocalStorageProducts() {
 }
 
 function displayPizzas() {
+    let products = "";
     pizzasArray = pizzasArray.concat(loadLocalStorageProducts());
     array4Col(pizzasArray);
 
