@@ -38,10 +38,10 @@ class Product {
 
 function deleteProduct(id) {
     let storageProducts = loadLocalStorageProducts();
-    let index = storageProducts.findIndex(item => +item.id === +this.id);
+    let index = storageProducts.findIndex(item => item.id === id);
     storageProducts.splice(index, 1);
     localStorage.crud = JSON.stringify(storageProducts);
-    displayProducts();
+    location.reload();
 }
 
 function displayProducts() {

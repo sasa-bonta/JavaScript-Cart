@@ -31,7 +31,6 @@ function addToCart(id) {
 function displayCart() {
     let itemsToDisplay = "";
     let total = 0;
-
     if (!isEmpty(cartProducts)) {
         cartProducts.forEach(item => {
             let price = item.price * item.quantity;
@@ -57,4 +56,12 @@ function deleteItem(id) {
     localStorage.cart = JSON.stringify(cartProducts);
     document.getElementById('items-count').innerHTML = countItems();
     displayCart()
+}
+
+function updateCart() {
+    cartProducts.forEach(product => {
+        if (pizzasArray.find(pizza => pizza.id === product.id) === undefined) {
+            deleteItem(product.id);
+        }
+    });
 }
