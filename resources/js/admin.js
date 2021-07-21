@@ -37,11 +37,13 @@ class Product {
 }
 
 function deleteProduct(id) {
-    let storageProducts = loadLocalStorageProducts();
-    let index = storageProducts.findIndex(item => item.id === id);
-    storageProducts.splice(index, 1);
-    localStorage.crud = JSON.stringify(storageProducts);
-    location.reload();
+    if (confirm('Delete this item?')) {
+        let storageProducts = loadLocalStorageProducts();
+        let index = storageProducts.findIndex(item => item.id === id);
+        storageProducts.splice(index, 1);
+        localStorage.crud = JSON.stringify(storageProducts);
+        location.reload();
+    }
 }
 
 function displayProducts() {
