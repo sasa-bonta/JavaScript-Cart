@@ -37,7 +37,11 @@ class Product {
 }
 
 function deleteProduct(id) {
-    console.log("deleteni...." + id)
+    let storageProducts = loadLocalStorageProducts();
+    let index = storageProducts.findIndex(item => +item.id === +this.id);
+    storageProducts.splice(index, 1);
+    localStorage.crud = JSON.stringify(storageProducts);
+    displayProducts();
 }
 
 function displayProducts() {

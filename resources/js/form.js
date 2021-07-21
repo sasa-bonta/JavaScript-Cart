@@ -19,10 +19,15 @@ class Product {
     }
 
     save() {
-        //TODO check if id already exists
-        loadLocalStorageProducts();
-        localStorage.crud = JSON.stringify(loadLocalStorageProducts().concat([this.getProduct()]));
-        console.log(this.getProduct());
+        let storageProducts = loadLocalStorageProducts();
+        let index = storageProducts.findIndex(item => +item.id === +this.id);
+
+        if (index !== -1) {
+            storageProducts[index] = this.getProduct();
+            localStorage.crud = JSON.stringify(storageProducts);
+        } else {
+            localStorage.crud = JSON.stringify(storageProducts.concat([this.getProduct()]));
+        }
     }
 
     getProduct() {
@@ -53,8 +58,10 @@ function getUrlParams() {
 }
 
 document.querySelector('form').addEventListener('submit', (e) => {
+    e.preventDefault()
     let product = new Product();
     product.save();
+    window.location.href = "admin.html";
 });
 
 getUrlParams();
