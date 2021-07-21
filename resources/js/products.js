@@ -1,5 +1,3 @@
-let s12 = s6 + s6;
-
 let pizzasArray = [
     {
         id: 1,
@@ -73,15 +71,22 @@ function array4Col(arr) {
     }
 }
 
-array4Col(pizzasArray);
+function loadLocalStorageProducts() {
+    localStorage.crud = localStorage.crud || JSON.stringify([])
+    return JSON.parse(localStorage.crud);
+}
 
-pizzasArray.forEach((pizza, index) => {
-    if (index % 4 === 0) {
-        products += `<div class="row">`;
-    }
+function displayPizzas() {
+    pizzasArray = pizzasArray.concat(loadLocalStorageProducts());
+    array4Col(pizzasArray);
 
-    products += !isEmpty(pizza) ?
-        `<div class="col col-6 col-lg-3">
+    pizzasArray.forEach((pizza, index) => {
+        if (index % 4 === 0) {
+            products += `<div class="row">`;
+        }
+
+        products += !isEmpty(pizza) ?
+            `<div class="col col-6 col-lg-3">
             <div class="card text-white h-100">
                 <img src="${pizza.image}" class="product-image" alt="${pizza.image}">
                 <h4>${pizza.name}</h4>
@@ -96,10 +101,11 @@ pizzasArray.forEach((pizza, index) => {
             </div>
         </div>` : `<div class="col"></div>`;
 
-    if (index % 4 === 3) {
-        products += `</div>`
-    }
-})
+        if (index % 4 === 3) {
+            products += `</div>`
+        }
+    });
 
-document.getElementById('pizzas').innerHTML = products;
-document.getElementById('items-count').innerHTML = countItems();
+    document.getElementById('pizzas').innerHTML = products;
+}
+

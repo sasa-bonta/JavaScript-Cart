@@ -1,21 +1,10 @@
-localStorage.crud = localStorage.crud !== undefined ? localStorage.crud : localStorage.crud = JSON.stringify([])
-let productsList = JSON.parse(localStorage.crud);
-
-console.log(productsList);
-
 class Product {
     constructor() {
+        this.id = this.generateId();
         this.name = this.valOf('name');
         this.price = this.valOf('price');
         this.description = this.valOf('description');
-        this.image = this.valOf('image') !== "" ? this.valOf('image') : "no-image.png";
-
-        if (this.valOf('image') === "") {
-            this.image = "no-image.png";
-        } else {
-            this.image = this.valOf('image');
-            this.saveImage();
-        }
+        this.image = this.valOf('image') || "images/pizzas/no-image.png";
     }
 
     valOf(data) {
@@ -23,12 +12,27 @@ class Product {
     }
 
     save() {
-        productsList.push(this);
-        localStorage.crud = JSON.stringify(productsList);
+        loadLocalStorageProducts();
+        localStorage.crud = JSON.stringify(loadLocalStorageProducts().concat([this.getProduct()]));
+        console.log(this.getProduct());
     }
 
-    saveImage() {
-        this.image.move
+    getProduct() {
+        return {
+            id: this.id,
+            name: this.name,
+            price: this.price,
+            description: this.description,
+            image: this.image,
+        }
+    }
+
+    generateId() {
+        return Math.max.apply(null,
+            ((pizzasArray.concat(loadLocalStorageProducts()))
+                .map(obj => obj.id))
+                .filter(id => id !== undefined)
+        ) + 1;
     }
 }
 
