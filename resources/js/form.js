@@ -7,14 +7,14 @@ const image = document.getElementById('image');
 
 class Product {
     constructor() {
-        this.id = this.valOf('idInput') || this.generateId();
-        this.name = this.valOf('name');
-        this.price = this.valOf('price');
-        this.description = this.valOf('description');
-        this.image = this.valOf('image') || "images/pizzas/no-image.png";
+        this.id = this.#valOf('idInput') || this.#generateId();
+        this.name = this.#valOf('name');
+        this.price = this.#valOf('price');
+        this.description = this.#valOf('description');
+        this.image = this.#valOf('image') || "images/pizzas/no-image.png";
     }
 
-    valOf(data) {
+    #valOf(data) {
         return document.getElementById(data).value;
     }
 
@@ -23,14 +23,14 @@ class Product {
         let index = storageProducts.findIndex(item => +item.id === +this.id);
 
         if (index !== -1) {
-            storageProducts[index] = this.getProduct();
+            storageProducts[index] = this.#getProduct();
             localStorage.crud = JSON.stringify(storageProducts);
         } else {
-            localStorage.crud = JSON.stringify(storageProducts.concat([this.getProduct()]));
+            localStorage.crud = JSON.stringify(storageProducts.concat([this.#getProduct()]));
         }
     }
 
-    getProduct() {
+    #getProduct() {
         return {
             id: this.id,
             name: this.name,
@@ -40,7 +40,7 @@ class Product {
         }
     }
 
-    generateId() {
+    #generateId() {
         return Math.max.apply(null,
             ((pizzasArray.concat(loadLocalStorageProducts()))
                 .map(obj => obj.id))
