@@ -1,23 +1,23 @@
 class Product {
     constructor() {
-        this.id = this.valOf('idInput') || this.generateId();
-        this.name = this.valOf('name');
-        this.price = this.valOf('price');
-        this.description = this.valOf('description');
-        this.image = this.valOf('image') || "images/pizzas/no-image.png";
+        this.id = this.#valOf('idInput') || this.#generateId();
+        this.name = this.#valOf('name');
+        this.price = this.#valOf('price');
+        this.description = this.#valOf('description');
+        this.image = this.#valOf('image') || "images/pizzas/no-image.png";
     }
 
-    valOf(data) {
+    #valOf(data) {
         return document.getElementById(data).value;
     }
 
     save() {
         loadLocalStorageProducts();
-        localStorage.crud = JSON.stringify(loadLocalStorageProducts().concat([this.getProduct()]));
-        console.log(this.getProduct());
+        localStorage.crud = JSON.stringify(loadLocalStorageProducts().concat([this.#getProduct()]));
+        console.log(this.#getProduct());
     }
 
-    getProduct() {
+    #getProduct() {
         return {
             id: this.id,
             name: this.name,
@@ -27,7 +27,7 @@ class Product {
         }
     }
 
-    generateId() {
+    #generateId() {
         return Math.max.apply(null,
             ((pizzasArray.concat(loadLocalStorageProducts()))
                 .map(obj => obj.id))
