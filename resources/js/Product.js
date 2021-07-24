@@ -15,7 +15,7 @@ class Product {
         }
     }
 
-    getHtml() {
+    getHtmlCart() {
         return `
             <div class="card text-white h-100">
                 <img src="${this.image}" class="product-image" alt="${this.image}">
@@ -29,6 +29,26 @@ class Product {
                    </button>
                 </div>
             </div>
+        `;
+    }
+
+    getHtmlRow() {
+        return `
+        <tr>
+            <td>${product.id}</td>
+            <td>${product.name}</td>
+            <td>${product.description}</td>
+            <td>${product.price}</td>
+            <td>${product.image}</td>
+            <td>
+                <div class="d-inline-flex actions">
+                    <a href="form.html?id=${product.id}&name=${product.name}&desc=${product.description}&price=${product.price}&image=${product.image}">
+                        <button class="btn btn-warning"><i class="bi-pencil-square"></i></button>
+                    </a>
+                    <button class="btn btn-danger" onclick="deleteProduct(${product.id});"><i class="bi-trash"></i></button>
+                </div>
+            </td>                        
+        </tr>
         `;
     }
 
