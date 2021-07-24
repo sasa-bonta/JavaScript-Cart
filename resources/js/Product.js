@@ -46,7 +46,7 @@ class Product {
         `;
     }
 
-    #valOf(data) {
+    #   valOf(data) {
         return document.getElementById(data).value;
     }
 
