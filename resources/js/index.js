@@ -1,4 +1,4 @@
-const pizzasArray = [
+let pizzasArray = [
     {
         id: 1,
         name: "Affumicata",
@@ -59,5 +59,6 @@ const pizzasArray = [
 
 
 let productsView = new ProductsView({onBtnClick: (product) => console.log(product)});
-let products = pizzasArray.concat(new ProductsStorage().load("crud"));
-productsView.display(products);
+pizzasArray = pizzasArray.concat(new Storage().load("crud"));
+productsView.display(pizzasArray);
+new Cart().checkProductsAvailability().showCount();

@@ -1,4 +1,4 @@
-class ProductsStorage {
+class Storage {
 
     load(key) {
         try {
