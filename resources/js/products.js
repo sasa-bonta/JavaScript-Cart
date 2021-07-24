@@ -1,4 +1,4 @@
-let pizzasArray = [
+const pizzasArray = [
     {
         id: 1,
         name: "Affumicata",
@@ -56,6 +56,7 @@ let pizzasArray = [
         image: "images/pizzas/38a8de519a66ddb36a5f650b87218890.jpg",
     },
 ];
+
 
 function isEmpty(obj) {
     return Object.keys(obj).length === 0;

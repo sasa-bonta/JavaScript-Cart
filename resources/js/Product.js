@@ -1,5 +1,5 @@
 class Product {
-    constructor(id, name, price, description, image) {
+    constructor({id, name, price, description, image}) {
         if (arguments.length === 0) {
             this.id = this.#valOf('idInput') || this.#generateId();
             this.name = this.#valOf('name');
@@ -27,7 +27,7 @@ class Product {
         }
     }
 
-    getHtml() {
+    getProductCard() {
         return `
         <div class="col col-12 col-sm-6 col-md-4 col-lg-3">
             <div class="card text-white h-100">
@@ -46,7 +46,7 @@ class Product {
         `;
     }
 
-    #   valOf(data) {
+    #valOf(data) {
         return document.getElementById(data).value;
     }
 
