@@ -59,5 +59,5 @@ const pizzasArray = [
 
 
 let productsView = new ProductsView({onBtnClick: (product) => console.log(product)});
-let products = pizzasArray.concat(productsView.load());
+let products = pizzasArray.concat(new ProductsStorage().load("crud"));
 productsView.display(products);

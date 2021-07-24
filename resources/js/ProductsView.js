@@ -4,29 +4,23 @@ class ProductsView {
         this.action = onBtnClick;
     }
 
-    load() {
-        try {
-            localStorage.crud = localStorage.crud || JSON.stringify([])
-            return JSON.parse(localStorage.crud);
-        } catch (err) {
-            return null;
-        }
-    }
-
     display(products) {
         const row = document.createElement("div");
         row.className = "row";
 
         products.forEach((pizza) => {
             const col = document.createElement("div");
-            col.className = "col col-12 col-sm-6 col-md-4 col-lg-3";
-            col.innerHTML = new Product(pizza).getProductCard();
+            col.className = "col col-6 col-sm-6 col-md-4 col-lg-3";
+            col.innerHTML = new Product(pizza).getHtml();
 
-            // const button = document.querySelector(".btn-holder button");
-            // button.addEventListener('click', () => this.action(pizza));
+            const button = col.querySelector(".btn-holder button");
+            button.addEventListener('click', () => this.action(pizza));
             row.appendChild(col);
         });
-
-
+        document.getElementById('pizzas').appendChild(row);
     }
+
+    // showRows(products) {
+    //
+    // }
 }

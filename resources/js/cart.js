@@ -28,6 +28,10 @@ function addToCart(id) {
     localStorage.cart = JSON.stringify(cartProducts);
 }
 
+function isEmpty(obj) {
+    return Object.keys(obj).length === 0;
+}
+
 function displayCart() {
     let itemsToDisplay = "";
     let total = 0;

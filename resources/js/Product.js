@@ -15,21 +15,8 @@ class Product {
         }
     }
 
-    save() {
-        let storageProducts = loadLocalStorageProducts();
-        let index = storageProducts.findIndex(item => +item.id === +this.id);
-
-        if (index !== -1) {
-            storageProducts[index] = this.#getProduct();
-            localStorage.crud = JSON.stringify(storageProducts);
-        } else {
-            localStorage.crud = JSON.stringify(storageProducts.concat([this.#getProduct()]));
-        }
-    }
-
-    getProductCard() {
+    getHtml() {
         return `
-        <div class="col col-12 col-sm-6 col-md-4 col-lg-3">
             <div class="card text-white h-100">
                 <img src="${this.image}" class="product-image" alt="${this.image}">
                 <h4>${this.name}</h4>
@@ -42,22 +29,11 @@ class Product {
                    </button>
                 </div>
             </div>
-        </div>
         `;
     }
 
     #valOf(data) {
         return document.getElementById(data).value;
-    }
-
-    #getProduct() {
-        return {
-            id: this.id,
-            name: this.name,
-            price: this.price,
-            description: this.description,
-            image: this.image,
-        }
     }
 
     #generateId() {
