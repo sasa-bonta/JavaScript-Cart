@@ -61,14 +61,6 @@ function isEmpty(obj) {
     return Object.keys(obj).length === 0;
 }
 
-function array4Col(arr) {
-    if (arr.length % 4 !== 0) {
-        let obj = {};
-        arr.push(obj);
-        if (arr.length % 4 !== 0) array4Col(arr);
-    }
-}
-
 function loadLocalStorageProducts() {
     localStorage.crud = localStorage.crud || JSON.stringify([])
     return JSON.parse(localStorage.crud);
@@ -77,10 +69,9 @@ function loadLocalStorageProducts() {
 function displayPizzas() {
     let products = "";
     pizzasArray = pizzasArray.concat(loadLocalStorageProducts());
-    array4Col(pizzasArray);
     products += `<div class="row">`;
 
-    pizzasArray.forEach((pizza, index) => {
+    pizzasArray.forEach((pizza) => {
         products += !isEmpty(pizza) ?
         `<div class="col col-6 col-sm-6 col-md-4 col-lg-3">
             <div class="card text-white h-100">
