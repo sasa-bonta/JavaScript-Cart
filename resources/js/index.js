@@ -57,8 +57,8 @@ let pizzasArray = [
     },
 ];
 
-
-let productsView = new ProductsView({onBtnClick: (product) => console.log(product)});
+let cart = new Cart();
+let productsView = new ProductsView({onBtnClick: (product) => cart.addToCart(product)});
 pizzasArray = pizzasArray.concat(new Storage().load("crud"));
 productsView.display(pizzasArray);
 new Cart().checkProductsAvailability().showCount();

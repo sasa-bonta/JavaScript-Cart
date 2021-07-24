@@ -15,7 +15,6 @@ class Cart {
 
     constructor() {
         this.cartProducts = this.loadCartArray();
-        console.log(this.cartProducts);
     }
 
     isEmpty(obj) {
@@ -34,30 +33,30 @@ class Cart {
         return itemsCount;
     }
 
-    addToCart(id) {
-        this.addItemToCart(id);
+    addToCart(product) {
+        this.addItemToCart(product);
         this.showCount();
-        this.save();
     }
 
-    addItemToCart(item) {
+    addItemToCart(product) {
         let cartItem = this.cartProducts.find(item => item.id === product.id)
         if (cartItem === undefined) {
-            let pizza = pizzasArray.find(pizza => pizza.id === id);
-            let newItem = C;
+            let pizza = pizzasArray.find(pizza => pizza.id === product.id);
+            let newItem = Object.assign({}, product);
             newItem.quantity = 1
             this.cartProducts.push(newItem)
         } else {
             cartItem.quantity++;
         }
+        this.save();
     }
 
     deleteItem(id) {
         let index = this.cartProducts.findIndex(item => item.id === id);
         this.cartProducts.splice(index, 1);
-        this.save()
-        this.showCount()
-        displayCart()
+        this.save();
+        this.showCount();
+        this.displayCart();
     }
 
     checkProductsAvailability() {
