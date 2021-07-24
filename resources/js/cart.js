@@ -42,7 +42,8 @@ function displayCart() {
                                        <i class="bi-trash"></i>
                                    </button>
                                </div><br>`
-        })
+        });
+        itemsToDisplay += `<div class="total"><div class="to-sides"><div>Total:</div> <div>${total} MDL</div></div></div>`;
     } else {
         itemsToDisplay += `<div class="cart-empty"> Your cart is empty!</div><br>`;
         document.getElementById('modal-footer').innerHTML = `<button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>`;
