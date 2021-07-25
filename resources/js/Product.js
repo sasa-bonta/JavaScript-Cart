@@ -1,4 +1,6 @@
-class Product {
+import {products} from "./products.js";
+
+export class Product {
     constructor({id, name, price, description, image}) {
         if (arguments.length === 0) {
             this.id = this.#valOf('idInput') || this.#generateId();
@@ -58,7 +60,7 @@ class Product {
 
     #generateId() {
         return Math.max.apply(null,
-            ((pizzasArray.concat(new Storage().load("crud")))
+            ((products.concat(new Storage().load("crud")))
                 .map(obj => obj.id))
                 .filter(id => id !== undefined)
         ) + 1;

@@ -1,3 +1,6 @@
+import {Storage} from "./Storage.js";
+import {products} from "./products.js";
+
 class CartItem {
     constructor({id, name, price, description, image, quantity}) {
         this.id = id;
@@ -9,7 +12,7 @@ class CartItem {
     }
 }
 
-class Cart {
+export class Cart {
 
     s3 = "&nbsp;&nbsp;&nbsp;";
 
@@ -41,7 +44,7 @@ class Cart {
     addItemToCart(product) {
         let cartItem = this.cartProducts.find(item => item.id === product.id)
         if (cartItem === undefined) {
-            let pizza = pizzasArray.find(pizza => pizza.id === product.id);
+            let pizza = products.find(pizza => pizza.id === product.id);
             let newItem = Object.assign({}, product);
             newItem.quantity = 1
             this.cartProducts.push(newItem)
@@ -61,7 +64,7 @@ class Cart {
 
     checkProductsAvailability() {
         this.cartProducts.forEach(product => {
-            if (pizzasArray.find(pizza => pizza.id === product.id) === undefined) {
+            if (products.find(pizza => pizza.id === product.id) === undefined) {
                 this.deleteItem(product.id);
             }
         });
@@ -83,6 +86,7 @@ class Cart {
                                    </button>
                                </div><br>`
             });
+            itemsToDisplay += `<div class="total"><div class="to-sides"><div>Total:</div> <div>${total} MDL</div></div></div>`;
         } else {
             itemsToDisplay += `<div class="cart-empty"> Your cart is empty!</div><br>`;
             document.getElementById('modal-footer').innerHTML = `<button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>`;

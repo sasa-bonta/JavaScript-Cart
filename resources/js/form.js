@@ -1,3 +1,5 @@
+import {Product} from "./Product.js";
+
 const urlParams = new URLSearchParams(window.location.search);
 const id = document.getElementById('idInput');
 const name = document.getElementById('name');

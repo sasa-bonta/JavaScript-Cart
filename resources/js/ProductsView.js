@@ -1,4 +1,6 @@
-class ProductsView {
+import {Product} from "./Product.js";
+
+export class ProductsView {
     constructor({onBtnClick}) {
         this.div = document.getElementById("pizzas");
         this.action = onBtnClick;
