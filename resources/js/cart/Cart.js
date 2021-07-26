@@ -1,5 +1,5 @@
 import {Storage} from "../storage/Storage.js";
-import {products} from "../product/products.js";
+import {products} from "../products.js";
 import {CartItem} from "./CartItem.js";
 import {CartView} from "./CartView.js";
 

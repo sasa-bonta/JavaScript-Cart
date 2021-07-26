@@ -4,7 +4,7 @@ export class ProductsView {
 
     tableHeader = `
     <table><tbody>
-    <tr class="columns">
+    <tr>
         <th>Id</th>
         <th>Name</th>
         <th>Description</th>

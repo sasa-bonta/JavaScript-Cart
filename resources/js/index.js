@@ -1,6 +1,6 @@
 import {ProductsView} from "./product/ProductsView.js"
 import {Cart} from "./cart/Cart.js"
-import {products} from "./product/products.js";
+import {products} from "./products.js";
 import {CartView} from "./cart/CartView.js";
 
 const openCart = document.getElementById("cart-button");
