@@ -1,15 +1,17 @@
-import {ProductsView} from "./ProductsView.js"
-import {Cart} from "./Cart.js"
-import {products} from "./products.js";
+import {ProductsView} from "./product/ProductsView.js"
+import {Cart} from "./cart/Cart.js"
+import {products} from "./product/products.js";
+import {CartView} from "./cart/CartView.js";
 
 const openCart = document.getElementById("cart-button");
 
-let cart = new Cart();
+let cart = new Cart({deleteBtn: (cartItem) => cart.deleteItem(cartItem)});
 let productsView = new ProductsView({onBtnClick: (product) => cart.addToCart(product)});
 productsView.display(products);
-new Cart().checkProductsAvailability().showCount();
+let cartView = new CartView(cart);
+cart.checkProductsAvailability().showCount();
 
 openCart.addEventListener("click", (e) => {
     e.preventDefault();
-    cart.displayCart();
+    cartView.display(cart.loadCartArray());
 });

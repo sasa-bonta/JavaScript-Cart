@@ -13,7 +13,7 @@ export class ProductsView {
         products.forEach((pizza) => {
             const col = document.createElement("div");
             col.className = "col col-6 col-sm-6 col-md-4 col-lg-3";
-            col.innerHTML = new Product(pizza).getHtmlCart();
+            col.innerHTML = new Product(pizza).getHtml();
 
             const button = col.querySelector(".btn-holder button");
             button.addEventListener('click', () => this.action(pizza));

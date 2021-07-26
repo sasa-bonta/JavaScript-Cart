@@ -17,7 +17,7 @@ export class Product {
         }
     }
 
-    getHtmlCart() {
+    getHtml() {
         return `
             <div class="card text-white h-100">
                 <img src="${this.image}" class="product-image" alt="${this.image}">

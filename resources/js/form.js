@@ -1,4 +1,4 @@
-import {Product} from "./Product.js";
+import {Product} from "./product/Product.js";
 
 const urlParams = new URLSearchParams(window.location.search);
 const id = document.getElementById('idInput');
