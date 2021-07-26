@@ -47,7 +47,7 @@ export class Product {
                     <a href="form.html?id=${this.id}&name=${this.name}&desc=${this.description}&price=${this.price}&image=${this.image}">
                         <button class="btn btn-warning"><i class="bi-pencil-square"></i></button>
                     </a>
-                    <button class="btn btn-danger" onclick="deleteProduct(${this.id});"><i class="bi-trash"></i></button>
+                    <button class="btn btn-danger delete"><i class="bi-trash"></i></button>
                 </div>
             </td>                        
         </tr>

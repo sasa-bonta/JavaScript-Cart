@@ -1,4 +1,4 @@
-import {Storage} from "../Storage.js";
+import {Storage} from "../storage/Storage.js";
 
 const pizzasArray = [
     {

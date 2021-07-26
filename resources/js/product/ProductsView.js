@@ -1,6 +1,18 @@
 import {Product} from "./Product.js";
 
 export class ProductsView {
+
+    tableHeader = `
+    <table><tbody>
+    <tr class="columns">
+        <th>Id</th>
+        <th>Name</th>
+        <th>Description</th>
+        <th>price</th>
+        <th>Image</th>
+        <th>Actions</th>
+    </tr>`;
+
     constructor({onBtnClick}) {
         this.div = document.getElementById("pizzas");
         this.action = onBtnClick;
@@ -22,7 +34,23 @@ export class ProductsView {
         document.getElementById('pizzas').appendChild(row);
     }
 
-    // showRows(products) {
-    //
-    // }
+    showRows(products) {
+        const div = document.getElementById("crudItems");
+        if (products.length === 0) {
+            div.innerHTML = `<div class="cart-empty"> Your cart is empty!</div><br>`;
+        } else {
+            div.innerHTML = this.tableHeader;
+
+            products.forEach(item => {
+                item = new Product(item);
+                let itemRow = document.createElement("tr");
+                itemRow.innerHTML = item.getHtmlRow();
+
+                const deleteBtn = itemRow.querySelector(".delete");
+                deleteBtn.addEventListener('click', () => this.action(item));
+
+                div.appendChild(itemRow);
+            });
+        }
+    }
 }

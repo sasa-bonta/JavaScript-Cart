@@ -1,4 +1,4 @@
-import {Storage} from "../Storage.js";
+import {Storage} from "../storage/Storage.js";
 import {products} from "../product/products.js";
 import {CartItem} from "./CartItem.js";
 import {CartView} from "./CartView.js";

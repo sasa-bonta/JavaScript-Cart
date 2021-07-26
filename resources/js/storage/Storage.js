@@ -9,7 +9,7 @@ export class Storage {
         }
     }
 
-    save(key, product) {
+    update(key, product) {
         let list = this.load(key);
         let index = list.findIndex(item => item.id === product.id); // add "+" ?
 
@@ -18,6 +18,20 @@ export class Storage {
             localStorage[key] = JSON.stringify(list);
         } else {
             localStorage[key] = JSON.stringify(list.concat([product]));
+        }
+    }
+
+    save(key, arr) {
+        localStorage[key] = JSON.stringify(arr);
+    }
+
+    delete(key, product, productsView) {
+        if (confirm("Delete this item?")) {
+            let productsArr = this.load(key);
+            let index = productsArr.findIndex(item => item.id === product.id);
+            productsArr.splice(index, 1);
+            this.save(key, productsArr);
+            productsView.showRows(productsArr);
         }
     }
 }
