@@ -10,8 +10,9 @@ export class Storage {
     }
 
     update(key, product) {
+        console.log(product);
         let list = this.load(key);
-        let index = list.findIndex(item => item.id === product.id); // add "+" ?
+        let index = list.findIndex(item => +item.id === +product.id); // add "+" ?
 
         if (index !== -1) {
             list[index] = product;
