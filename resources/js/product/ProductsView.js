@@ -3,15 +3,15 @@ import {Product} from "./Product.js";
 export class ProductsView {
 
     tableHeader = `
-    <table><tbody>
     <tr>
         <th>Id</th>
         <th>Name</th>
         <th>Description</th>
-        <th>price</th>
+        <th>Price</th>
         <th>Image</th>
         <th>Actions</th>
-    </tr>`;
+    </tr>
+`;
 
     constructor({onBtnClick}) {
         this.div = document.getElementById("pizzas");
@@ -37,9 +37,14 @@ export class ProductsView {
     showRows(products) {
         const div = document.getElementById("crudItems");
         if (products.length === 0) {
-            div.innerHTML = `<div class="cart-empty"> Your cart is empty!</div><br>`;
+            div.innerHTML = `<div class="cart-empty"> No products found </div><br>`;
         } else {
-            div.innerHTML = this.tableHeader;
+            let table = document.createElement("table");
+            table.className = "table table-dark table-hover";
+            let tbody = document.createElement("tbody");
+            tbody.innerHTML = this.tableHeader;
+            table.appendChild(tbody);
+            div.appendChild(table);
 
             products.forEach(item => {
                 item = new Product(item);
@@ -49,7 +54,7 @@ export class ProductsView {
                 const deleteBtn = itemRow.querySelector(".delete");
                 deleteBtn.addEventListener('click', () => this.action(item));
 
-                div.appendChild(itemRow);
+                tbody.appendChild(itemRow);
             });
         }
     }

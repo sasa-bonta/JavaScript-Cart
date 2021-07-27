@@ -11,10 +11,6 @@ export class CartItem {
         this.quantity = quantity;
     }
 
-    delete() {
-
-    }
-
     getHtml(priceAll) {
         return `
         <img src="${this.image}" class="cart-image" alt="item.name"> 

@@ -1,5 +1,4 @@
 .crud-form {
-    /*width: 50%;*/
     padding: 30px;
     color: white;
     transition: .6s;
@@ -12,7 +11,6 @@ input, select, option {
     font-family: arial, "Futura New Book", sans-serif;
     font-size: 14pt;
     border-radius: 10px;
-    /*width: 600px;*/
     height: 45px;
 }
 
@@ -54,14 +52,6 @@ input[type=file]::-webkit-file-upload-button:active {
     margin: 5px;
 }
 
-tr:nth-child(odd) {
-    background: #1b1a1b
-}
-
-tr:nth-child(even) {
-    background: #363333
-}
-
 #crudItems th {
     font-size: 22px;
     padding-bottom: 20px;
@@ -74,6 +64,10 @@ tr:nth-child(even) {
 
 #createNew {
     margin: 50px;
+}
+
+#space {
+    height: 100px;
 }
 
 
