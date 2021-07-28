@@ -15,8 +15,6 @@
     <!--My js & css-->
     <link rel="stylesheet" href="resources/css/index.css">
     <link rel="stylesheet" href="resources/css/cart.css">
-    <script src="resources/js/cart.js"></script>
-    <script src="resources/js/products.js"></script>
 </head>
 <body>
 
@@ -104,7 +102,7 @@
         <!--Button to open bootstrap modal-->
         <div class="cart-icon">
             <button class="btn btn-dark ms-5" id="cart-button" data-bs-target="#cartModal"
-                    data-bs-toggle="modal" onclick="displayCart();">
+                    data-bs-toggle="modal">
                 <div class="cart-items-count" id="items-count"></div>
                 <i class="bi-cart-check"></i>
             </button>
@@ -147,6 +145,6 @@
     </div>
 </div>
 
-<script src="resources/js/index.js"></script>
+<script type="module" src="resources/js/index.js"></script>
 </body>
 </html>

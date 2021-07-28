@@ -15,7 +15,6 @@
     <!--My js & css-->
     <link rel="stylesheet" href="resources/css/index.css">
     <link rel="stylesheet" href="resources/css/admin.css">
-    <script src="resources/js/products.js"></script>
 </head>
 <body>
 
@@ -47,29 +46,33 @@
 </nav>
 
 <div class="container">
-    <div class="crud-form">
-        <form id="productForm" name="productForm">
-            <div>
-                <input type="number" id="idInput" hidden>
+    <div class="row">
+        <div class="col-0 col-sm-1 col-md-2 col-lg-3"></div>
+        <div class="col-12 col-sm-10 col-md-8 col-lg-6 justify-content-center crud-form">
+            <form id="productForm" name="productForm">
+                <div>
+                    <input type="number" id="idInput" hidden>
 
-                <label for="name">Name</label>
-                <input type="text" id="name" name="name" required>
+                    <label class="w-100" for="name">Name</label>
+                    <input class="w-100" type="text" id="name" name="name" required>
 
-                <label for="price">Price</label>
-                <input type="text" id="price" name="price" required>
+                    <label class="w-100" for="price">Price</label>
+                    <input class="w-100" type="text" id="price" name="price" required>
 
-                <label for="description">Description</label>
-                <input type="text" id="description" name="description">
+                    <label class="w-100" for="description">Description</label>
+                    <input class="w-100" type="text" id="description" name="description">
 
-                <label for="image">Image</label>
-                <input type="text" id="image" name="image" required>
+                    <label class="w-100" for="image">Image</label>
+                    <input class="w-100" type="text" id="image" name="image" required>
 
-                <button id="save-product" class="btn btn-success" type="submit">Save</button>
-            </div>
-        </form>
+                    <button id="save-product" class="btn btn-success" type="submit">Save</button>
+                </div>
+            </form>
+        </div>
+        <div class="col-0 col-sm-1 col-md-2 col-lg-3"></div>
     </div>
 </div>
 
-<script src="resources/js/form.js"></script>
+<script type="module" src="resources/js/form.js"></script>
 </body>
 </html>
