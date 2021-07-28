@@ -17,6 +17,7 @@ export class CartItem {
                                        <div>${this.name}:</div>
                                        <div>${this.quantity} pcs. </div>
                                        <div>${priceAll} MDL </div>
+                                       <div class="w-25"></div>
                                        <button class="btn btn-danger delete-btn">
                                            <i class="bi-trash"></i>
                                        </button>
