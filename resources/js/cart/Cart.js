@@ -6,6 +6,7 @@ import {CartView} from "./CartView.js";
 export class Cart {
 
     constructor({deleteBtn}) {
+        this.storage = new Storage();
         this.cartProducts = this.loadCartArray();
         this.deleteBtn = deleteBtn;
         this.cartView = new CartView(this);
@@ -23,7 +24,6 @@ export class Cart {
     addItemToCart(product) {
         let cartItem = this.cartProducts.find(item => item.id === product.id)
         if (cartItem === undefined) {
-            let pizza = products.find(pizza => pizza.id === product.id);
             let newItem = Object.assign({}, product);
             newItem.quantity = 1
             this.cartProducts.push(newItem)
@@ -51,15 +51,15 @@ export class Cart {
     }
 
     loadCartArray() {
-        let array = new Storage().load("cart");
+        let array = this.storage.load("cart");
         array.forEach(obj => {
-            obj = new CartItem(obj);
+            new CartItem(obj);
         });
         return array;
     }
 
     save() {
-        localStorage.cart = JSON.stringify(this.cartProducts);
+        this.storage.save("cart", this.cartProducts);
     }
 
     #countItems() {
