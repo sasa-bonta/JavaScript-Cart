@@ -27,12 +27,10 @@ export class Storage {
     }
 
     delete(key, product, productsView) {
-        if (confirm("Delete this item?")) {
             let productsArr = this.load(key);
             let index = productsArr.findIndex(item => item.id === product.id);
             productsArr.splice(index, 1);
             this.save(key, productsArr);
             productsView.showRows(productsArr);
-        }
     }
 }

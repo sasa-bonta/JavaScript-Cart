@@ -36,6 +36,7 @@ export class ProductsView {
 
     showRows(products) {
         const div = document.getElementById("crudItems");
+        div.innerHTML = "";
         if (products.length === 0) {
             div.innerHTML = `<div class="cart-empty"> No products found </div><br>`;
         } else {
@@ -52,7 +53,7 @@ export class ProductsView {
                 itemRow.innerHTML = item.getHtmlRow();
 
                 const deleteBtn = itemRow.querySelector(".delete");
-                deleteBtn.addEventListener('click', () => this.action(item));
+                deleteBtn.addEventListener('click', () => { if (confirm("Delete this item?")) {this.action(item)}});
 
                 tbody.appendChild(itemRow);
             });
