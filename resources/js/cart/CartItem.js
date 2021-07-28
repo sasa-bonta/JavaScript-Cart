@@ -1,7 +1,6 @@
 export class CartItem {
 
     s3 = "&nbsp;&nbsp;&nbsp;";
-    s6 = this.s3 + this.s3;
 
     constructor({id, name, price, description, image, quantity}) {
         this.id = id;
@@ -20,7 +19,7 @@ export class CartItem {
                                    <!--<button class="btn btn-secondary addOne"> - </button>-->
                                    ${this.quantity} pcs. 
                                    <!--<button class="btn btn-secondary removeOne" > + </button>-->
-                                   ${this.s6} ${priceAll} MDL 
+                                   ${this.s3 + this.s3} ${priceAll} MDL 
                                    <button class="btn btn-danger delete-btn">
                                        <i class="bi-trash"></i>
                                    </button>
