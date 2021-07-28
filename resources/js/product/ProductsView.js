@@ -53,7 +53,9 @@ export class ProductsView {
                 itemRow.innerHTML = item.getHtmlRow();
 
                 const deleteBtn = itemRow.querySelector(".delete");
-                deleteBtn.addEventListener('click', () => { if (confirm("Delete this item?")) {this.action(item)}});
+                deleteBtn.addEventListener('click', () => {
+                    if (confirm("Delete this item?")) this.action(item)
+                });
 
                 tbody.appendChild(itemRow);
             });
