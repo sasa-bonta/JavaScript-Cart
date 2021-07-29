@@ -1,4 +1,4 @@
-import {CartItem} from "./CartItem.js";
+import {CartItem} from "./CartItem";
 
 export class CartView {
     constructor(cart) {

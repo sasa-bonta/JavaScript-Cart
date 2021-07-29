@@ -1,0 +1,25 @@
+{
+  "name": "Pizza",
+  "version": "1.0.0",
+  "description": "",
+  "main": "resources/js/index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/sasa-bonta/JavaScript-Cart.git"
+  },
+  "keywords": [],
+  "author": "sasa-bonta",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/sasa-bonta/JavaScript-Cart/issues"
+  },
+  "homepage": "https://github.com/sasa-bonta/JavaScript-Cart#readme",
+  "devDependencies": {
+    "html-webpack-plugin": "^5.3.2",
+    "webpack": "^5.47.0",
+    "webpack-cli": "^4.7.2"
+  }
+}

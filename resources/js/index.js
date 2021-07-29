@@ -1,7 +1,7 @@
-import {ProductsView} from "./product/ProductsView.js"
-import {Cart} from "./cart/Cart.js"
-import {products} from "./products.js";
-import {CartView} from "./cart/CartView.js";
+import {ProductsView} from "./product/ProductsView"
+import {Cart} from "./cart/Cart"
+import {products} from "./products";
+import {CartView} from "./cart/CartView";
 
 const openCart = document.getElementById("cart-button");
 

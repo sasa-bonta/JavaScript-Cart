@@ -1,5 +1,5 @@
-import {Storage} from "./storage/Storage.js";
-import {ProductsView} from "./product/ProductsView.js";
+import {Storage} from "./storage/Storage";
+import {ProductsView} from "./product/ProductsView";
 
 let storage = new Storage();
 let storageProducts = storage.load("crud");

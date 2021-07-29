@@ -1,5 +1,5 @@
-import {Product} from "./product/Product.js";
-import {Storage} from "./storage/Storage.js";
+import {Product} from "./product/Product";
+import {Storage} from "./storage/Storage";
 
 const urlParams = new URLSearchParams(window.location.search);
 const id = document.getElementById('idInput');

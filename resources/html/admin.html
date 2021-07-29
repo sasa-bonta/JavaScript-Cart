@@ -3,25 +3,25 @@
 <head>
     <meta charset="UTF-8">
     <title>Admin pizzas</title>
-    <link rel="shortcut icon" href="images/logo.svg" type="image/x-icon">
+    <link rel="shortcut icon" href="../images/logo.svg" type="image/x-icon">
     <!--Meta required by bootstrap-->
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <!--Bootstrap icons-->
-    <link rel="stylesheet" href="resources/css/bootstrap-icons.css">
+    <link rel="stylesheet" href="../resources/css/bootstrap-icons.css">
     <!--Bootstrap css-->
-    <link href="resources/css/bootstrap.min.css" rel="stylesheet" media="screen">
+    <link href="../resources/css/bootstrap.min.css" rel="stylesheet" media="screen">
     <!--Bootstrap js-->
-    <script src="resources/js/bootstrap.min.js"></script>
+    <script src="../resources/js/bootstrap.min.js"></script>
     <!--My js & css-->
-    <link rel="stylesheet" href="resources/css/index.css">
-    <link rel="stylesheet" href="resources/css/admin.css">
+    <link rel="stylesheet" href="../resources/css/index.css">
+    <link rel="stylesheet" href="../resources/css/admin.css">
 </head>
 <body>
 
 <nav class="navbar sticky-top navbar-expand-lg navbar-dark bg-dark">
     <div class="container bi-align-middle" id="menu-container">
         <a href="index.html" class="navbar-brand mb-0 h1 ">
-            <img src="images/logo.svg" class="d-inline-block align-middle" width="64" height="64" alt="logo.svg">
+            <img src="../images/logo.svg" class="d-inline-block align-middle" width="64" height="64" alt="logo.svg">
         </a>
         <button class="navbar-toggler"
                 type="button"
@@ -45,18 +45,15 @@
     </div>
 </nav>
 
-<div class="container-fluid">
+<div class="container">
     <div id="space"></div>
-    <div class="row justify-content-center">
-        <div id="crudItems"></div>
-        <div class="d-flex justify-content-center">
-            <a href="form.html">
-                <button class="btn btn-primary" id="createNew">Create new Product</button>
-            </a>
-        </div>
+    <div class="row">
+        <div class="col-10 text-light" id="crudItems"></div>
+        <a href="form.html">
+            <button class="btn btn-primary" id="createNew">Create new Product</button>
+        </a>
     </div>
 </div>
 
-<script defer src="dist/admin-e424ae9174a7d1dfe90f.bundle.js"></script>
 </body>
 </html>

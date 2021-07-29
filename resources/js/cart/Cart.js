@@ -1,7 +1,7 @@
-import {Storage} from "../storage/Storage.js";
-import {products} from "../products.js";
-import {CartItem} from "./CartItem.js";
-import {CartView} from "./CartView.js";
+import {Storage} from "../storage/Storage";
+import {products} from "../products";
+import {CartItem} from "./CartItem";
+import {CartView} from "./CartView";
 
 export class Cart {
 
