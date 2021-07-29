@@ -12,7 +12,7 @@ export class Storage {
             localStorage.setItem(key, localStorage.getItem(key) || JSON.stringify([]));
             return JSON.parse(localStorage.getItem(key));
         } catch (err) {
-            Muscula.Error('Invalid json', err);
+            Muscula.Error('Try/catch : Invalid json', err);
             return null;
         }
     }
