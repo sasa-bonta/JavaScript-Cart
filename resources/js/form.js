@@ -2,25 +2,32 @@ import {Product} from "./product/Product";
 import {Storage} from "./storage/Storage";
 
 const urlParams = new URLSearchParams(window.location.search);
-const id = document.getElementById('idInput');
-const name = document.getElementById('name');
-const desc = document.getElementById('description');
-const price = document.getElementById('price');
-const image = document.getElementById('image');
+const form = getEl('productForm');
 
 let storage = new Storage();
 
+function getEl(id) {
+    return document.getElementById(id);
+}
+
 function getUrlParams() {
-    id.value = urlParams.get("id") ?? "";
-    name.value = urlParams.get("name") ?? "";
-    desc.value = urlParams.get("desc") ?? "";
-    price.value = urlParams.get("price") ?? "";
-    image.value = urlParams.get("image") ?? "";
+    getEl('idInput').value = urlParams.get("id") ?? "";
+    getEl('name').value = urlParams.get("name") ?? "";
+    getEl('description').value = urlParams.get("desc") ?? "";
+    getEl('price').value = urlParams.get("price") ?? "";
+    getEl('image').value = urlParams.get("image") ?? "";
 }
 
 document.querySelector('form').addEventListener('submit', (e) => {
     e.preventDefault()
-    let product = new Product({id: id.value, name: name.value, description: desc.value, price: price.value, image: image.value});
+    const formData = new FormData(form);
+    let product = new Product({
+        id: formData.get('id'),
+        name: formData.get('name'),
+        description: formData.get('description'),
+        price: formData.get('price'),
+        image: formData.get('image'),
+    });
     storage.update("crud", product);
     window.location.href = "admin.html";
 });
