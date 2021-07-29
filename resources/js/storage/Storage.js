@@ -1,3 +1,10 @@
+/**
+ * import muscula for loging errors
+ */
+import * as Muscula from "@muscula.com/muscula-webapp-js-logger";
+
+Muscula.Init('xpobmbV4Iju');
+
 export class Storage {
 
     load(key) {
@@ -5,6 +12,7 @@ export class Storage {
             localStorage.setItem(key, localStorage.getItem(key) || JSON.stringify([]));
             return JSON.parse(localStorage.getItem(key));
         } catch (err) {
+            Muscula.Error('Invalid json', err);
             return null;
         }
     }
