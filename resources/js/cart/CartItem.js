@@ -23,4 +23,5 @@ export class CartItem {
                                    </button>
                                </div><br>
         `;
+    }
 }
