@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Product form</title>
+    <link rel="shortcut icon" href="images/logo.svg" type="image/x-icon">
+    <!--Meta required by bootstrap-->
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!--Bootstrap icons-->
+    <link rel="stylesheet" href="resources/css/bootstrap-icons.css">
+    <!--Bootstrap css-->
+    <link href="resources/css/bootstrap.min.css" rel="stylesheet" media="screen">
+    <!--Bootstrap js-->
+    <script src="resources/js/bootstrap.min.js"></script>
+    <!--My js & css-->
+    <link rel="stylesheet" href="resources/css/index.css">
+    <link rel="stylesheet" href="resources/css/admin.css">
+    <!--Muscula script-->
+    <script type="text/javascript" src="resources/js/muscula.js"></script>
+</head>
+<body>
+
+<nav class="navbar sticky-top navbar-expand-lg navbar-dark bg-dark">
+    <div class="container bi-align-middle" id="menu-container">
+        <a href="index.html" class="navbar-brand mb-0 h1 ">
+            <img src="images/logo.svg" class="d-inline-block align-middle" width="64" height="64" alt="logo.svg">
+        </a>
+        <button class="navbar-toggler"
+                type="button"
+                data-bs-toggle="collapse"
+                data-bs-target="#navbarNav"
+                aria-controls="navbarNav"
+                aria-expanded="false"
+                aria-label="Toggle Navigation"
+        >
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav">
+                <li class="nav-item">
+                    <a href="index.html" class="nav-link">
+                        Home
+                    </a>
+                </li>
+            </ul>
+        </div>
+    </div>
+</nav>
+
+<div class="container">
+    <div class="row">
+        <div class="col-0 col-sm-1 col-md-2 col-lg-3"></div>
+        <div class="col-12 col-sm-10 col-md-8 col-lg-6 justify-content-center crud-form">
+            <form id="productForm" name="productForm">
+                <div>
+                    <input type="number" id="idInput" name="id" hidden>
+
+                    <label class="w-100" for="name">Name</label>
+                    <input class="w-100" type="text" id="name" name="name" required>
+
+                    <label class="w-100" for="price">Price</label>
+                    <input class="w-100" type="text" id="price" name="price" required>
+
+                    <label class="w-100" for="description">Description</label>
+                    <input class="w-100" type="text" id="description" name="description">
+
+                    <label class="w-100" for="image">Image</label>
+                    <input class="w-100" type="text" id="image" name="image" required>
+
+                    <button id="save-product" class="btn btn-success" type="submit">Save</button>
+                </div>
+            </form>
+        </div>
+        <div class="col-0 col-sm-1 col-md-2 col-lg-3"></div>
+    </div>
+</div>
+
+<script defer src="dist/form-63b32945090699d80123.bundle.js"></script></body>
+</html>
