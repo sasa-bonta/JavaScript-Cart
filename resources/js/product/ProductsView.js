@@ -38,7 +38,7 @@ export class ProductsView {
         const div = document.getElementById("crudItems");
         div.innerHTML = "";
         if (products.length === 0) {
-            div.innerHTML = `<div class="cart-empty"> No products found </div><br>`;
+            div.innerHTML = `<div class="products-empty text-white"> No products found </div><br>`;
         } else {
             let table = document.createElement("table");
             table.className = "table table-dark table-hover";
