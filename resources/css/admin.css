@@ -72,6 +72,10 @@ input[type=file]::-webkit-file-upload-button:active {
     height: 100px;
 }
 
+.products-empty {
+    font-size: 1.5rem;
+}
+
 table tr > *:nth-child(1) { width:5%; }
 table tr > *:nth-child(2) { width:10%; }
 table tr > *:nth-child(3) { width:20%; }
