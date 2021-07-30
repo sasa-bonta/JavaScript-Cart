@@ -13,6 +13,7 @@ export class CartView {
     }
 
     display(cartItems) {
+        this.#removeAllChildNodes();
         if (cartItems.length === 0) {
             this.list.innerHTML = `<div class="cart-empty"> Your cart is empty!</div><br>`;
             this.footer.innerHTML = `<button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>`;

@@ -18,11 +18,16 @@
   },
   "homepage": "https://github.com/sasa-bonta/JavaScript-Cart#readme",
   "devDependencies": {
+    "@babel/core": "^7.14.8",
+    "@babel/plugin-transform-runtime": "^7.14.5",
+    "@babel/preset-env": "^7.14.8",
+    "babel-loader": "^8.2.2",
     "html-webpack-plugin": "^5.3.2",
     "webpack": "^5.47.1",
     "webpack-cli": "^4.7.2"
   },
   "dependencies": {
+    "@babel/runtime": "^7.14.8",
     "@muscula.com/muscula-webapp-js-logger": "^1.0.3"
   }
 }
