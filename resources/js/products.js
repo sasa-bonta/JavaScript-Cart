@@ -2,13 +2,6 @@ import {Storage} from "./storage/Storage";
 
 const pizzasArray = [
     {
-        id: 0,
-        name: "Sfintirea comenzii",
-        price: 50,
-        description: "Parintele Panteleu",
-        image: "https://i2.wp.com/gaben.ro/wp-content/uploads/2013/07/sfintire.jpg?ssl=1",
-    },
-    {
         id: 1,
         name: "Affumicata",
         price: 95,
