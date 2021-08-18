@@ -29,5 +29,9 @@
   "dependencies": {
     "@babel/runtime": "^7.14.8",
     "@muscula.com/muscula-webapp-js-logger": "^1.0.3"
-  }
+  },
+  "browserslist": [
+    "> 0.2%",
+    "not dead"
+  ]
 }
